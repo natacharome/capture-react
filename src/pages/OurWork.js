@@ -1,11 +1,61 @@
 import React from "react";
+// Styled component
+import styled from 'styled-components';
+import {Link} from 'react-router-dom';
+
+// Images
+import athlete from '../images/athlete-small.png';
+import theracer from '../images/theracer-small.png';
+import goodtimes from '../images/goodtimes-small.png';
+
+// Animations
+import { motion } from "framer-motion";
+import { pageAnimation } from '../animation';
+
 
 const OurWork = () => {
     return (
-        <h1>
-            Our Work
-        </h1>
+        <Work style={{background:"#fff"}} variants={pageAnimation} initial="hidden" animate="show" exit="exit">
+           <Movie>
+               <h2>The Athlete</h2>
+               <div className="line"></div>
+               <Link to="/work/the-athlete"><img src={athlete} alt="athlete"/></Link>
+           </Movie>
+           <Movie>
+               <h2>The Racer</h2>
+               <div className="line"></div>
+               <Link to="/work/the-racer"><img src={theracer} alt="theracer"/></Link>
+           </Movie>
+           <Movie>
+               <h2>Good Times</h2>
+               <div className="line"></div>
+               <Link to="/work/good-times"><img src={goodtimes} alt="goodtimes"/></Link>
+           </Movie>
+        </Work>
     )
 }
+
+const Work = styled(motion.div)`
+    min-height: 100vh;
+    overflow:hidden;
+    padding: 5rem 10rem;
+    h2 {
+        padding: 1rem 0rem;
+    }
+`;
+
+const Movie = styled.div`
+    padding-bottom:10rem;
+    .line {
+        height: 0.5rem;
+        background: #2c3049;
+        margin-bottom: 3rem;
+    }
+    img {
+        width: 100%;
+        height: 70vh;
+        object-fit: cover;
+    }
+`
 
 export default OurWork;
