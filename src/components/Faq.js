@@ -1,44 +1,43 @@
-import React from "react";
+import React, {useState} from "react";
+import Toggle from "./Toggle";
 
 // Styles
 import styled from "styled-components";
 import {AboutSection} from "../styles";
-const Faq = () => {
+import { AnimateSharedLayout } from 'framer-motion';
+
+
+const Faq = ({toggle, setToggle, title}) => {
+
     return (
         <FaqSection>
             <h2>Any Questions <span>FAQ</span></h2>
-            <div className="question">
-                <h4>How do I start ?</h4>
-                <div className="answer">
-                    <p>Lorem ipsum, dolor sit amet.</p>
-                    <p>Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus.</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Daily Schedule</h4>
-                <div className="answer">
-                    <p>Lorem ipsum, dolor sit amet.</p>
-                    <p>Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus.</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>Different payement methods</h4>
-                <div className="answer">
-                    <p>Lorem ipsum, dolor sit amet.</p>
-                    <p>Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus.</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
-            <div className="question">
-                <h4>What products do you offer ?</h4>
-                <div className="answer">
-                    <p>Lorem ipsum, dolor sit amet.</p>
-                    <p>Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus.</p>
-                </div>
-                <div className="faq-line"></div>
-            </div>
+            <AnimateSharedLayout>
+                <Toggle title="How do I Start ?">
+                    <div className="answer">
+                        <p>Lorem ipsum, dolor sit amet.</p>
+                        <p>Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus.</p>
+                    </div>
+                </Toggle>
+                <Toggle title="Daily Schedule">
+                    <div className="answer">
+                        <p>Lorem ipsum, dolor sit amet.</p>
+                        <p>Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus.</p>
+                    </div>
+                </Toggle>
+                <Toggle title="Different payment methods">
+                    <div className="answer">
+                        <p>Lorem ipsum, dolor sit amet.</p>
+                        <p>Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus.</p>
+                    </div>
+                </Toggle>
+                <Toggle title="What product do you offer ?">
+                    <div className="answer">
+                        <p>Lorem ipsum, dolor sit amet.</p>
+                        <p>Inter haec Orfitus praefecti potestate regebat urbem aeternam ultra modum delatae dignitatis sese efferens insolenter, vir quidem prudens et forensium negotiorum oppido gnarus.</p>
+                    </div>
+                </Toggle>
+            </AnimateSharedLayout>
         </FaqSection>
     )
 }
