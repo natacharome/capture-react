@@ -8,12 +8,18 @@ const GlobalStyle = createGlobalStyle`
 // green : #23d997
 // gray-blue : #babbd6
 
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
+}
+
+html {
+    @media(max-width:1700px){
+        font-size: 75%;
+    }
+    
 }
 
 body {
