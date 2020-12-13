@@ -16,6 +16,7 @@ import { AnimatePresence } from "framer-motion";
 
 
 
+
 function App() {
   const location = useLocation();
   
@@ -40,6 +41,8 @@ function App() {
             </Route>
           </Switch>
        </AnimatePresence>
+       
+     
        
     </div>
   );
